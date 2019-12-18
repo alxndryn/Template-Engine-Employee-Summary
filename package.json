@@ -1,0 +1,28 @@
+{
+  "name": "wk-10-hw",
+  "version": "1.0.0",
+  "description": "**** INSTRUCTIONS ****",
+  "main": "app.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "dependencies": {
+    "inquirer": "^7.0.0",
+    "jest": "^24.9.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alxndryn/wk-10-hw.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alxndryn/wk-10-hw/issues"
+  },
+  "homepage": "https://github.com/alxndryn/wk-10-hw#readme"
+}
