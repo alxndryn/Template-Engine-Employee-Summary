@@ -14,4 +14,3 @@ inquirer.prompt([
 
     console.log("Success!");
 })
-}
