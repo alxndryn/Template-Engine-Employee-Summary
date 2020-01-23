@@ -100,6 +100,18 @@ function buildPage() {
     })
     console.log("Created template. Generating cards...")
 }
+for (employee of teamArr) {
+switch(employee.getRole() == "Manager") {
+  case x: 
+    // code block
+    break;
+  case y:
+    // code block
+    break;
+  default:
+    // code block
+}
+}
 
 
 //Run application
@@ -125,3 +137,5 @@ init();
 
 //create html page writing function
 //write html templates
+
+//Week 09 Activity 40
