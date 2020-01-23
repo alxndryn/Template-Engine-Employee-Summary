@@ -82,6 +82,7 @@ function addEmployee() {
       var newEmployee = new Intern(answer.name, teamArr.length + 1, answer.email, answer.school);
     }
     teamArr.push(newEmployee);
+    console.log(teamArr);
     if (answer.addEmployee === "Yes") {
       addEmployee();
     } else {
@@ -109,3 +110,8 @@ function init() {
   }
 
 init();
+
+//manager questions
+//employee questions
+//function for manager to build page or add employees
+//function for employees to build page or add more employees
