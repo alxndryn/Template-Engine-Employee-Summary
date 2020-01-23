@@ -92,9 +92,12 @@ function addEmployee() {
 }
 
 
-//Builds HTML page
+//Builds HTML page (unfinished)
 function buildPage() {
-  
+    let newFile = fs.readFileSync("./templates/main.html")
+    fs.writeFileSync("./output/team.html", newFile, function (err) {
+        if (err) throw err;
+    })
 }
 
 
