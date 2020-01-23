@@ -86,7 +86,7 @@ function addEmployee() {
     if (answer.addEmployee === "Yes") {
       addEmployee();
     } else {
-      console.log("**Generating Page**")
+      buildPage();
     }
   })
 }
@@ -98,6 +98,7 @@ function buildPage() {
     fs.writeFileSync("./output/team.html", newFile, function (err) {
         if (err) throw err;
     })
+    console.log("Created template. Generating cards...")
 }
 
 
@@ -110,7 +111,7 @@ function init() {
     if (answer.addEmployee === "Yes") {
       addEmployee();
     } else {
-      console.log("**Generating Page**")
+     buildPage();
     }
   })
   }
