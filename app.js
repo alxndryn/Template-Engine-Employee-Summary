@@ -48,11 +48,33 @@ const teamInput = [
     type: "list",
     name: "role",
     choices: ["Engineer", "Intern"]
+  },
+  {
+    when: answer => {
+      return answer.role == "Engineer"
+    },
+    type: "input",
+    name: "github",
+    message: "Enter Github username:"
+  },
+  {
+    when: answer => {
+      return answer.role == "Intern"
+    },
+    type: "input",
+    name: "school",
+    message: "Enter the name of your school:"
+  },
+  {
+    type: "list",
+    name: "addEmployee",
+    message: "Add employees?",
+    choices: ["Yes", "No"]
   }
 ]
 
 //Adds additional team members
-addEmployee() {
+function addEmployee() {
   inquirer.prompt(teamInput).then(answer => {
     if (answer.role == "Engineer") {
       var newEmployee = new Engineer(answer.name, teamArr.length + 1, answer.email, answer.github);
@@ -79,7 +101,7 @@ function init() {
     teamArr.push(teamManager);
     console.log(teamArr);
     if (answer.addEmployee === "Yes") {
-      teamInput();
+      addEmployee();
     } else {
       console.log("**Generating Page**")
     }
