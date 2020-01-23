@@ -113,5 +113,8 @@ init();
 
 //manager questions
 //employee questions
-//function for manager to build page or add employees
-//function for employees to build page or add more employees
+//function for manager to build page(currently console.log) or add employees
+//function for employees to build page(currently console.log) or add more employees
+
+//create html page writing function
+//write html templates
