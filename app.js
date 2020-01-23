@@ -8,17 +8,17 @@ const Manager = require("./lib/Manager");
 const inquirer = require("inquirer");
 const fs = require("fs");
 
-
+teamArr = [];
 const userInput = [
   {
     type: "input",
     name: "name",
-    message: "Enter manager name:",
+    message: "Enter manager name:"
   },
   {
     type: "input",
     name: "email",
-    message: "Enter manager e-mail:",
+    message: "Enter manager e-mail:"
   },
   {
     type: "input",
@@ -31,10 +31,59 @@ const userInput = [
     message: "Add employees?",
     choices: ["Yes", "No"]
   }
+];
+
+const teamInput = [
+  {
+    type: "input",
+    name: "name",
+    message: "Enter employee name:"
+  },
+  {
+    type: "input",
+    name: "email",
+    message: "Enter employee email:"
+  },
+  {
+    type: "list",
+    name: "role",
+    choices: ["Engineer", "Intern"]
+  }
 ]
 
+//Adds additional team members
+addEmployee() {
+  inquirer.prompt(teamInput).then(answer => {
+    if (answer.role == "Engineer") {
+      var newEmployee = new Engineer(answer.name, teamArr.length + 1, answer.email, answer.github);
+    } else {
+      var newEmployee = new Intern(answer.name, teamArr.length + 1, answer.email, answer.school);
+    }
+    teamArr.push(newEmployee);
+    if (answer.addEmployee === "Yes") {
+      addEmployee();
+    } else {
+      console.log("**Generating Page**")
+    }
+  })
+}
+
+
+//Builds HTML page
+
+
+//Run application
 function init() {
-  inquirer.prompt(userInput)
+  inquirer.prompt(userInput).then(answer => {
+    let teamManager = new Manager (answer.name, 1, answer.email, answer.officeNumber);
+    teamArr.push(teamManager);
+    console.log(teamArr);
+    if (answer.addEmployee === "Yes") {
+      teamInput();
+    } else {
+      console.log("**Generating Page**")
+    }
+  })
   }
 
 init();
