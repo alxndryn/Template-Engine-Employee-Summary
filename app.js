@@ -93,6 +93,9 @@ function addEmployee() {
 
 
 //Builds HTML page
+function buildPage() {
+  
+}
 
 
 //Run application
