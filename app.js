@@ -94,23 +94,37 @@ function addEmployee() {
 
 //Builds HTML page (unfinished)
 function buildPage() {
-    let newFile = fs.readFileSync("./templates/main.html")
-    fs.writeFileSync("./output/team.html", newFile, function (err) {
-        if (err) throw err;
-    })
-    console.log("Created template. Generating cards...")
+  let newFile = fs.readFileSync("./templates/main.html")
+  fs.writeFileSync("./output/team.html", newFile, function (err) {
+      if (err) throw err;
+  })
+
+  console.log("Main page generated!");
+
+  for (employee of teamArr) {
+      if (employee.getRole() == "Manager") {
+          buildHtmlCard("manager", employee.getName(), employee.getId(), employee.getEmail(), "Office: " + employee.getOfficeNumber());
+      } else if (employee.getRole() == "Engineer") {
+          buildHtmlCard("engineer", employee.getName(), employee.getId(), employee.getEmail(), "Github: " + employee.getGithub());
+      } else if (employee.getRole() == "Intern") {
+          buildHtmlCard("intern", employee.getName(), employee.getId(), employee.getEmail(), "School: " + employee.getSchool());
+      }
+  }
+  fs.appendFileSync("./output/team.html", "</div></main></body></html>", function (err) {
+      if (err) throw err;
+  });
+  console.log("Added employees to page! Process finished.")
+
 }
-for (employee of teamArr) {
-switch(employee.getRole() == "Manager") {
-  case x: 
-    // code block
-    break;
-  case y:
-    // code block
-    break;
-  default:
-    // code block
-}
+
+function buildHtmlCard(employeeType, name, id, email, propertyValue) {
+  let data = fs.readFileSync(`./templates/${employeeType}.html`, 'utf8')
+  data = data.replace("nameHere", name);
+  data = data.replace("idHere", `ID: ${id}`);
+  data = data.replace("emailHere", `Email: <a href="mailto:${email}">${email}</a>`);
+  data = data.replace("propertyHere", propertyValue);
+  fs.appendFileSync("./output/team.html", data, err => { if (err) throw err; })
+  console.log("Card appended");
 }
 
 
