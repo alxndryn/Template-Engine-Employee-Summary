@@ -110,7 +110,7 @@ function buildPage() {
           buildHtmlCard("intern", employee.getName(), employee.getId(), employee.getEmail(), "School: " + employee.getSchool());
       }
   }
-  fs.appendFileSync("./output/team.html", "</div></main></body></html>", function (err) {
+  fs.appendFileSync("./output/team.html", "</div></section></body></html>", function (err) {
       if (err) throw err;
   });
   console.log("Added employees to page! Process finished.")
