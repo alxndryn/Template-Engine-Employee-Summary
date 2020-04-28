@@ -11,9 +11,10 @@ Tests are included to ensure that the program runs as expected.
 ![](sample-usage.gif)
 
 ## Sample Output
+![]()
 
 ## Test Suite
-![]()
+![](test-suite.png)
 
 ## Prerequisites
 
