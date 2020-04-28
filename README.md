@@ -10,8 +10,8 @@ Tests are included to ensure that the program runs as expected.
 ## Sample Usage
 ![](sample-usage.gif)
 
-## Sample Output
-![]()
+## Output Example
+![](output-example.png)
 
 ## Test Suite
 ![](test-suite.png)
