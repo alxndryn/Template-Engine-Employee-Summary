@@ -4,18 +4,6 @@ Node CLI for inputting employee information and having it displayed on a respons
 
 Tests are included to ensure that the program runs as expected.
 
-
-
-
-## Sample Usage
-![](sample-usage.gif)
-
-## Output Example
-![](output-example.png)
-
-## Test Suite
-![](test-suite.png)
-
 ## Prerequisites
 
 1. Node.js
@@ -33,3 +21,12 @@ Tests are included to ensure that the program runs as expected.
 ### npm Packages
 
 - jest
+
+## Sample Usage
+![](sample-usage.gif)
+
+## Test Suite
+![](test-suite.png)
+
+## Output Example
+![](output-example.png)
