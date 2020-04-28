@@ -3,7 +3,7 @@
 
 
 ## Sample Usage
-![](sameple-usage.gif)
+![](sample-usage.gif)
 
 ## Sample Output
 
